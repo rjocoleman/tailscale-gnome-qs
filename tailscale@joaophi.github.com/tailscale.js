@@ -1,7 +1,5 @@
-import GLib from "gi://GLib";
-import GObject from "gi://GObject";
-import Gio from "gi://Gio";
-import Soup from "gi://Soup?version=3.0";
+imports.gi.Soup.version = "3.0";
+const { GLib, GObject, Gio, Soup } = imports.gi;
 
 class TailscaleApiClient {
   constructor() {
@@ -53,7 +51,7 @@ class TailscaleApiClient {
   }
 }
 
-export const Tailscale = GObject.registerClass(
+var Tailscale = GObject.registerClass(
   {
     Properties: {
       "running": GObject.ParamSpec.boolean(
